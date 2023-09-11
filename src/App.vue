@@ -2,6 +2,7 @@
 import { onMounted, ref } from 'vue';
 import { fakeAPI } from '../api/fakeAPI';
 
+
 const products = ref(null);
 
 onMounted( async () => {
@@ -17,9 +18,11 @@ onMounted( async () => {
 </script>
 
 <template>
+  <div class="">
   <article v-for="product in products?.data" :key="product.id">
     <img :src="product.image" alt="">
     <h4>{{ product.title }}</h4>
     <p>{{ product.description }}</p>
   </article>
+</div>
 </template>
